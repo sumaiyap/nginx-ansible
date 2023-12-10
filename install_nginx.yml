@@ -1,0 +1,13 @@
+---
+- name: Install Nginx on different hosts
+  hosts: nginx-host
+  gather_facts: true
+  become: true
+
+  tasks:
+    - name: Install Nginx on AWS EC2 instance
+      become: true
+      apt:
+        name: nginx
+        state: present
+
